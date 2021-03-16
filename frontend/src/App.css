@@ -5,24 +5,27 @@
   font-size: 16px;
   max-width: 100%;
 }
-
 a,
 button,
 a:active,
 a:focus,
 a:hover {
   text-decoration: none;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-
 a:not([class*="disabled"]):hover,
 button:not([class*="disabled"]):hover {
   filter: invert(1);
 }
-
+.App.dark {
+  background-color: #303030;
+}
 /* Temp */
-.header+small {
+.header + small {
   display: block;
   padding: 8px;
   margin: 8px auto 8px 0;
+}
+.App.dark .header + small {
+  color: #fff;
 }

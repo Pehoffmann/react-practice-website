@@ -1,15 +1,25 @@
 .main-banner {
-    align-items: center;
-    background-color: #00dbf8;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    height: 50vh;
-    margin: 0 0 16px 0;
-    padding: 16px;
-    width: 100vw;
-  }
+  align-items: center;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+  background-color: #00dbf8;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  height: 50vh;
+  margin: 0 0 16px 0;
+  padding: 16px;
+  width: 100vw;
+}
   
+  .main-banner.loading {
+    background-blend-mode: normal;
+    background-size: 240px;
+  }
+
   .main-banner__title {
     color: #fff;
     font-size: 32px;
