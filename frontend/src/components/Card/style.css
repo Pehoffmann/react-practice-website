@@ -16,3 +16,11 @@
   color: #fff;
   margin: 8px auto 0;
 }
+.card__description {
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  color: #fff;
+  display: -webkit-box;
+  margin: 8px auto 0;
+  overflow: hidden;
+}

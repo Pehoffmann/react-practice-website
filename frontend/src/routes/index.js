@@ -18,7 +18,6 @@ const Routes = () => {
           path="/categorias/:categoria/:produto"
           component={Produto}
         />
-        <Route path="/produtos" component={Produto} />
         <Route path="/sobre" component={Sobre} />
         <Route path="/" component={Home} />
       </Switch>
