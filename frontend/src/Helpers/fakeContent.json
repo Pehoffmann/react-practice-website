@@ -2,15 +2,15 @@
   "categories": [
     {
       "id": 1,
-      "title": "Categoria 01"
+      "title": "Space"
     },
     {
       "id": 2,
-      "title": "Categoria 02"
+      "title": "Sea"
     },
     {
       "id": 3,
-      "title": "Categoria 03"
+      "title": "Brazil"
     }
   ],
   "posts": [

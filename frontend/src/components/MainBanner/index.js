@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useParams, useLocation } from "react-router-dom";
 import api from "../../services/api";
 import "./style.css";
-
 const MainBanner = ({ ...props }) => {
+  let { categoria } = useParams(),
+    location = useLocation();
   const { getRandomImgByTerm } = api.Unsplash,
     { title } = props,
     defaultImg =
@@ -10,8 +12,14 @@ const MainBanner = ({ ...props }) => {
     defaultTerm = "nature",
     [isLoading, setIsLoading] = useState(true),
     [img, setImg] = useState(defaultImg),
-    [term, setTerm] = useState(defaultTerm);
-
+    [term, setTerm] = useState(categoria ? categoria : defaultTerm);
+  useEffect(() => {
+    if (categoria) {
+      setTerm(categoria);
+    } else {
+      setTerm(defaultTerm);
+    }
+  }, [location, categoria]);
   useEffect(() => {
     const imgCallback = (url) => {
       if (!url.includes("source-404")) {
@@ -23,20 +31,19 @@ const MainBanner = ({ ...props }) => {
         changeTerm();
       }
     };
-
     getRandomImgByTerm(term, imgCallback);
   }, [getRandomImgByTerm, term]);
-
   const changeTerm = (event = undefined) => {
     if (event !== undefined) {
       event.preventDefault();
     }
-
     const newTerm = prompt(
       "Qual tema deseja?\nSepare os temas por vírgula.\nO termo deve ser escrito em inglês"
     );
     if (newTerm && newTerm !== undefined) {
       setTerm(newTerm.replace(/ /g, ""));
+      setImg(defaultImg);
+      setIsLoading(true);
     } else {
       return;
     }

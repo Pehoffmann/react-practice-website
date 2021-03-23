@@ -39,3 +39,25 @@
   margin: 0 0 0 24px;
   pointer-events: none;
 }
+
+.subheader {
+  background-color: #232323;
+  margin: 0 0 16px;
+  padding: 8px 16px;
+  width: 100vw;
+}
+.subheader__subnav {
+  align-items: center;
+  display: flex;
+  flex: 1 0 100%;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+.subheader__subnav__item {
+  color: #fff;
+  font-weight: bolder;
+}
+.subheader__subnav__item.selected {
+  color: #00dbf8;
+  font-weight: bold;
+}
